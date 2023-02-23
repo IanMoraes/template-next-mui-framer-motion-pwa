@@ -7,8 +7,13 @@ import { CacheProvider } from "@emotion/react";
 import theme from "../config/theme";
 import createEmotionCache from "../config/createEmotionCache";
 
+import DateFnsUtils from "@date-io/date-fns";
+import { LocalizationProvider } from "@mui/x-date-pickers";
+import { QueryClient, QueryClientProvider } from "react-query";
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache();
+
+const queryClient = new QueryClient();
 
 export default function MyApp(props) {
     const { Component, emotionCache = clientSideEmotionCache, pageProps } = props;
@@ -19,9 +24,13 @@ export default function MyApp(props) {
                 <meta name="viewport" content="initial-scale=1, width=device-width" />
             </Head>
             <ThemeProvider theme={theme}>
-                {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
-                <CssBaseline />
-                <Component {...pageProps} />
+                <LocalizationProvider dateAdapter={DateFnsUtils}>
+                    <QueryClientProvider client={queryClient}>
+                        {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
+                        <CssBaseline />
+                        <Component {...pageProps} />
+                    </QueryClientProvider>
+                </LocalizationProvider>
             </ThemeProvider>
         </CacheProvider>
     );
