@@ -1,21 +1,23 @@
-import { useState } from "react";
-import styles from "/styles/Home.module.css";
-import { Button, Typography } from "@mui/material";
+import React from "react";
+import { Controller, Scene } from "react-scrollmagic";
 
 const Index = () => {
-    const [count, setCount] = useState(0);
-
-    const handleClick = () => {
-        setCount(count + 1);
-    };
     return (
-        <div className={styles.background}>
-            <Typography>Template MuiUi + FramerMotion + Nextjs!</Typography>
-
-            <Button variant="contained" onClick={handleClick}>
-                {count}
-            </Button>
-        </div>
+        <Controller>
+            <Scene duration="200%" triggerHook="onEnter">
+                {(progress) => (
+                    <div
+                        className="parallax"
+                        style={{
+                            transform: `translateY(${progress * -50}%)`,
+                        }}
+                    >
+                        <h1>Meu efeito de paralaxe</h1>
+                        <p>Este é o meu conteúdo animado.</p>
+                    </div>
+                )}
+            </Scene>
+        </Controller>
     );
 };
 
