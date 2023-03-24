@@ -9,6 +9,9 @@ const Index = () => {
             <Link href="/pokes">
                 <Button>oi</Button>
             </Link>
+            <Link href="/poksdsdes">
+                <Button>fake</Button>
+            </Link>
         </>
     );
 };
