@@ -2,13 +2,13 @@
   "name": "nextjs",
   "version": "5.0.0",
   "private": true,
-  "homepage": "out",
   "scripts": {
     "dev": "next dev",
-    "build": "next build & next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest"
+    "post-update": "echo \"codesandbox preview only, need an update\" && yarn upgrade --latest",
+    "export": "next export"
   },
   "dependencies": {
     "@date-io/date-fns": "^2.16.0",
