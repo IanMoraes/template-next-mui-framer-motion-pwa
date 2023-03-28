@@ -9,9 +9,7 @@ const ErrorPage = () => {
         <div>
             <h1>Ops! Algo deu errado.</h1>
             <p>Você será redirecionado para a página 404 em breve...</p>
-            <Link href="/">
-                <a>Voltar para a página inicial</a>
-            </Link>
+            <Link href="/">Voltar para a página inicial</Link>
         </div>
     );
 };
