@@ -10,7 +10,7 @@ const Index = () => {
                 <Button>oi</Button>
             </Link>
             <Link href="/poksdsdes">
-                <Button>fake</Button>
+                <Button>fakddse</Button>
             </Link>
         </>
     );
